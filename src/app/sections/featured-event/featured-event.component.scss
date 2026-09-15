@@ -1,0 +1,139 @@
+:host { display: block; }
+
+.featured-event {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(300px, .95fr) minmax(0, 1.55fr);
+  align-items: center;
+  gap: clamp(18px, 2vw, 28px);
+  margin: 0 16px 26px;
+  padding: 24px 48px;
+  border: 2px solid #ff1d25;
+  border-radius: 16px;
+  background: #fffdf8;
+  color: var(--cmda-navy);
+}
+
+.event-content { min-width: 0; }
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #6f7890;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  font-size: 27px;
+  line-height: 1.15;
+}
+
+.summary {
+  margin: 12px 0 18px;
+  color: #24324a;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.event-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-bottom: 18px;
+  color: #1a2944;
+  font-size: 13px;
+}
+
+.event-details span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+}
+
+.event-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 11px 18px;
+  border-radius: 4px;
+  background: var(--cmda-navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: default;
+}
+
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  min-width: 0;
+}
+
+.event-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.event-nav {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(6, 28, 70, .16);
+  color: var(--cmda-navy);
+  font-size: 28px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.event-nav:disabled { opacity: 1; }
+.event-nav-previous { left: 18px; }
+.event-nav-next { right: 18px; }
+
+@media (max-width: 1050px) {
+  .featured-event {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 44px;
+  }
+}
+
+@media (max-width: 700px) {
+  .featured-event {
+    margin: 0 12px 24px;
+    padding: 22px 18px 24px;
+  }
+
+  .event-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .event-nav { display: none; }
+}
+
+@media (max-width: 480px) {
+  .featured-event {
+    margin-inline: 10px;
+    border-radius: 12px;
+  }
+
+  h2 { font-size: 23px; }
+  .summary { font-size: 14px; }
+  .event-gallery img { border-radius: 6px; }
+}

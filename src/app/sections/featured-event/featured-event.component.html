@@ -1,0 +1,35 @@
+<section class="featured-event" aria-labelledby="featured-event-title">
+  <button class="event-nav event-nav-previous" type="button" aria-label="Événement précédent" disabled>
+    ‹
+  </button>
+
+  <div class="event-content">
+    <p class="eyebrow">Prochain événement</p>
+    <h2 id="featured-event-title">Retraite communautaire 2027</h2>
+    <p class="summary">Un temps de grâce, de prière et de renouvellement spirituel.</p>
+
+    <div class="event-details" aria-label="Informations pratiques">
+      <span>
+        <strong>09 – 11 avril 2027</strong>
+      </span>
+      <span>
+        <strong>Puget, Var (83)</strong>
+      </span>
+    </div>
+
+    <a class="event-button" href="#" aria-disabled="true" title="Bientôt disponible">
+      En savoir plus
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <div class="event-gallery" aria-label="Images de la retraite communautaire">
+    @for (image of images; track image.src) {
+      <img [src]="image.src" [alt]="image.alt" width="1536" height="1024" loading="eager" decoding="async">
+    }
+  </div>
+
+  <button class="event-nav event-nav-next" type="button" aria-label="Événement suivant" disabled>
+    ›
+  </button>
+</section>

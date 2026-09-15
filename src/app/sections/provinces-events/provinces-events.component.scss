@@ -1,0 +1,127 @@
+:host { display: block; }
+
+.provinces-events {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, .95fr);
+  gap: clamp(18px, 2.4vw, 34px);
+  padding: 0 16px 24px;
+  background: #fff;
+  color: var(--cmda-navy);
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.presence,
+.events-panel {
+  min-width: 0;
+}
+
+.presence-visual {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #eef3f8;
+}
+
+.presence-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1729 / 910;
+  object-fit: cover;
+}
+
+.section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  color: var(--cmda-navy);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: default;
+}
+
+.events-panel {
+  align-self: stretch;
+  padding: 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff9ed 0%, #f6ead2 100%);
+}
+
+.events-list {
+  display: grid;
+  gap: 10px;
+}
+
+.event-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-height: 78px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .86);
+}
+
+.event-date {
+  display: flex;
+  min-height: 58px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #fff8e5;
+  color: var(--cmda-navy);
+  line-height: 1;
+}
+
+.event-date strong {
+  font-size: 28px;
+  line-height: .95;
+}
+
+.event-date span {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+  color: #31405a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.events-link { margin-top: 16px; }
+
+@media (max-width: 900px) {
+  .provinces-events {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 12px 22px;
+  }
+
+  .events-panel { padding: 18px; }
+}
+
+@media (max-width: 480px) {
+  .provinces-events { padding-inline: 10px; gap: 16px; }
+  h2 { font-size: 21px; }
+  .presence-visual,
+  .events-panel { border-radius: 12px; }
+  .event-card { grid-template-columns: 58px minmax(0, 1fr); gap: 12px; }
+  .event-date strong { font-size: 25px; }
+}

@@ -1,0 +1,84 @@
+:host { display: block; }
+
+.prayer-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 124px;
+  color: #fff;
+  background: var(--cmda-navy);
+}
+
+.prayer-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.prayer-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(3, 18, 47, .94) 0%, rgba(3, 18, 47, .78) 45%, rgba(3, 18, 47, .18) 100%);
+}
+
+.prayer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 124px;
+  padding: 24px 16px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 27px;
+  line-height: 1.18;
+}
+
+p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.prayer-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 46px;
+  min-width: 212px;
+  padding: 12px 22px;
+  border-radius: 4px;
+  background: var(--cmda-yellow);
+  color: var(--cmda-navy);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: default;
+}
+
+@media (max-width: 700px) {
+  .prayer-content {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 26px 12px;
+  }
+
+  h2 { font-size: 24px; }
+  .prayer-button { min-width: 0; width: 100%; max-width: 280px; }
+}
+
+@media (max-width: 480px) {
+  .prayer-content { padding-inline: 10px; }
+  h2 { font-size: 22px; }
+}

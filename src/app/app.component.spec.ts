@@ -20,10 +20,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('cmda-website');
   });
 
-  it('should render title', () => {
+  it('should render the CMDA header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, cmda-website');
+    expect(compiled.querySelector('app-header')?.textContent).toContain('Mère du Divin Amour');
   });
 });

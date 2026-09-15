@@ -1,0 +1,32 @@
+<header class="site-header" (keydown.escape)="menuOpen = false">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="CMDA — Accueil">
+      <img class="brand-logo" src="assets/images/logo-cmda.png" alt="" width="260" height="363">
+      <span class="brand-name">
+        <span class="brand-community">Communauté catholique</span>
+        <span class="brand-title">Mère du Divin Amour</span>
+        <span class="brand-short">CMDA</span>
+      </span>
+    </a>
+    <button class="menu-toggle" type="button" aria-controls="header-navigation"
+      [attr.aria-expanded]="menuOpen" [attr.aria-label]="menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
+      (click)="menuOpen = !menuOpen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        @if (menuOpen) { <path d="m6 6 12 12M6 18 18 6" /> }
+        @else { <path d="M3 6h18M3 12h18M3 18h18" /> }
+      </svg>
+    </button>
+    <nav id="header-navigation" class="navigation" [class.is-open]="menuOpen" aria-label="Navigation principale">
+      <a class="nav-link is-active" href="/" aria-current="page" (click)="menuOpen = false">Accueil</a>
+      @for (label of navigation; track label) {
+        <a class="nav-link" role="link" aria-disabled="true" title="Bientôt disponible">{{ label }}</a>
+      }
+      <button class="donate-button" type="button" aria-disabled="true" title="Bientôt disponible">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+        </svg>
+        Faire un don
+      </button>
+    </nav>
+  </div>
+</header>

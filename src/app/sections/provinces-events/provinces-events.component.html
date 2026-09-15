@@ -1,0 +1,37 @@
+<section class="provinces-events" aria-labelledby="presence-title">
+  <div class="presence">
+    <h2 id="presence-title">Notre présence au service de l’Évangile</h2>
+    <figure class="presence-visual">
+      <img src="assets/images/s04_evangile01.png" alt="Annonce de l’Évangile dans une assemblée fraternelle"
+        width="1729" height="910" loading="lazy" decoding="async">
+    </figure>
+    <a class="section-link" href="#" aria-disabled="true" title="Bientôt disponible">
+      Voir toutes les provinces
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <aside class="events-panel" aria-labelledby="events-title">
+    <h2 id="events-title">Événements à venir</h2>
+
+    <div class="events-list">
+      @for (event of events; track event.day + event.month + event.title) {
+        <article class="event-card">
+          <time class="event-date" [attr.datetime]="event.month === 'SEPT' ? '2026-09-' + event.day : '2026-10-' + event.day">
+            <strong>{{ event.day }}</strong>
+            <span>{{ event.month }}</span>
+          </time>
+          <div>
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.area }}</p>
+          </div>
+        </article>
+      }
+    </div>
+
+    <a class="section-link events-link" href="#" aria-disabled="true" title="Bientôt disponible">
+      Voir tous les événements
+      <span aria-hidden="true">→</span>
+    </a>
+  </aside>
+</section>

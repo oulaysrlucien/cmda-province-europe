@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="footer-main">
+    <section class="footer-about" aria-label="Présentation CMDA">
+      <img src="assets/images/logo-cmda.png" alt="Logo CMDA" width="96" height="96" loading="lazy" decoding="async">
+      <p>La CMDA est une famille spirituelle catholique au service de l’Évangile et des âmes, dans l’amour du Christ et sous le regard de Marie.</p>
+
+      <div class="social-links" aria-label="Réseaux sociaux">
+        <a href="#" aria-disabled="true" title="Bientôt disponible" aria-label="Facebook">
+          <span aria-hidden="true">f</span>
+        </a>
+        <a href="#" aria-disabled="true" title="Bientôt disponible" aria-label="Instagram">
+          <span aria-hidden="true">◎</span>
+        </a>
+        <a href="#" aria-disabled="true" title="Bientôt disponible" aria-label="YouTube">
+          <span aria-hidden="true">▶</span>
+        </a>
+      </div>
+    </section>
+
+    <nav class="footer-column" aria-label="Liens rapides">
+      <h2>Liens rapides</h2>
+      @for (link of quickLinks; track link.label) {
+        <a href="#" aria-disabled="true" title="Bientôt disponible">{{ link.label }}</a>
+      }
+    </nav>
+
+    <nav class="footer-column" aria-label="Ressources">
+      <h2>Ressources</h2>
+      @for (link of resources; track link.label) {
+        <a href="#" aria-disabled="true" title="Bientôt disponible">{{ link.label }}</a>
+      }
+    </nav>
+
+    <section class="footer-column" aria-label="Siège">
+      <h2>Siège</h2>
+      <p>Abidjan, Côte d’Ivoire</p>
+      <a href="mailto:contact@cmda.org">contact&#64;cmda.org</a>
+      <a href="tel:+2250700000000">+225 07 00 00 00 00</a>
+    </section>
+
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Newsletter</h2>
+      <p>Recevez nos actualités et événements.</p>
+      <form>
+        <label for="newsletter-email">Votre email</label>
+        <input id="newsletter-email" type="email" placeholder="Votre email" aria-label="Votre email">
+        <button type="button" aria-disabled="true" title="Bientôt disponible">S’inscrire</button>
+      </form>
+    </section>
+  </div>
+</footer>

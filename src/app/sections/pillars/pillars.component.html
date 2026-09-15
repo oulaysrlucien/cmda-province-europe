@@ -1,0 +1,13 @@
+<section class="pillars" aria-labelledby="pillars-title">
+  <h2 id="pillars-title" class="sr-only">Les piliers de la CMDA</h2>
+
+  <div class="pillars-band">
+    @for (pillar of pillars; track pillar.title) {
+      <article class="pillar-card">
+        <img class="pillar-icon" [src]="pillar.icon" alt="" width="96" height="96" loading="lazy" decoding="async">
+        <h3>{{ pillar.title }}</h3>
+        <p>{{ pillar.text }}</p>
+      </article>
+    }
+  </div>
+</section>
