@@ -13,10 +13,11 @@ interface FooterLink {
 export class FooterComponent {
   protected readonly quickLinks: FooterLink[] = [
     { label: 'Accueil' },
-    { label: 'À propos' },
-    { label: 'Nos provinces' },
+    { label: 'Qui sommes-nous ?' },
+    { label: 'Régions' },
     { label: 'Vie communautaire' },
     { label: 'Ressources' },
+    { label: 'Actualités' },
     { label: 'Contact' }
   ];
 

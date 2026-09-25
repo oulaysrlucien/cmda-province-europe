@@ -1,0 +1,27 @@
+<section id="fraternites" class="fraternities" aria-labelledby="fraternities-title">
+  <div class="section-heading">
+    <div>
+      <h2 id="fraternities-title">Nos fraternités</h2>
+      <span class="heading-mark" aria-hidden="true"></span>
+    </div>
+    <a [routerLink]="[]" fragment="fraternites-list">Voir toutes les fraternités <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div id="fraternites-list" class="fraternity-list">
+    @for (fraternity of fraternities; track fraternity.slug) {
+      <article class="fraternity-card">
+        <div class="card-placeholder" aria-hidden="true">
+          <span>{{ fraternity.initials }}</span>
+        </div>
+        <div class="card-content">
+          <span class="fraternity-marker" aria-hidden="true">⌂</span>
+          <div>
+            <h3>{{ fraternity.name }}</h3>
+            <p>{{ fraternity.location }}</p>
+          </div>
+          <span class="card-arrow" aria-hidden="true">›</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>

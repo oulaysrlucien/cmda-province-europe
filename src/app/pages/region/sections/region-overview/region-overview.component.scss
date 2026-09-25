@@ -1,0 +1,16 @@
+:host { display: block; }
+.overview { display: grid; grid-template-columns: minmax(275px, .72fr) minmax(0, 1.78fr); gap: 34px; width: min(1470px, calc(100% - 64px)); margin-inline: auto; padding-block: 26px 38px; scroll-margin-top: 20px; }
+.about-card { display: flex; flex-direction: column; padding: 28px 30px; border-radius: 15px; background: linear-gradient(135deg, #fbf9fe, #eee8f8); color: #11133d; }
+h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(27px, 2.4vw, 36px); line-height: 1.05; letter-spacing: -.03em; }
+.heading-mark { display: block; width: 43px; height: 3px; margin: 15px 0; border-radius: 2px; background: #7446c4; }
+p { margin: 0 0 26px; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 1.48; }
+.about-card a { display: flex; align-items: center; justify-content: center; gap: 17px; min-height: 55px; padding: 13px 18px; margin-top: auto; border-radius: 10px; background: linear-gradient(90deg, #552092, #6523a5); color: #fff; text-align: center; text-decoration: none; font-weight: 700; }
+.about-card a span { font-size: 25px; font-weight: 400; }
+.about-card a:hover { background: #46157e; }
+.about-card a:focus-visible { outline: 3px solid #7a4cbc; outline-offset: 3px; }
+@media (max-width: 900px) {
+  .overview { grid-template-columns: minmax(0, 1fr); width: min(100% - 32px, 720px); }
+  .about-card { min-height: auto; }
+  .about-card a { align-self: flex-start; margin-top: 0; }
+}
+@media (max-width: 480px) { .overview { width: min(100% - 24px, 720px); gap: 27px; } .about-card { padding: 24px 20px; } }

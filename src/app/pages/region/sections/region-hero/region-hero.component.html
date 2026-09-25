@@ -1,0 +1,30 @@
+<section class="region-hero" [style.background-image]="'url(' + region.heroImage + ')'" aria-labelledby="region-title">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ region.eyebrow }}</p>
+      <h1 id="region-title">Région <span>Nord</span></h1>
+      <p class="introduction">{{ region.introduction }}</p>
+
+      <dl class="region-stats" aria-label="La Région Nord en chiffres">
+        @for (stat of region.stats; track stat.label) {
+          <div class="stat">
+            <span class="stat-icon" aria-hidden="true">
+              @switch (stat.icon) {
+                @case ('location') {
+                  <svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-13A7 7 0 1 0 5 9c0 6.8 7 13 7 13Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+                }
+                @case ('members') {
+                  <svg viewBox="0 0 28 24"><circle cx="9" cy="7" r="4"/><circle cx="20" cy="8" r="3.5"/><path d="M1 22c0-6 3-9 8-9s8 3 8 9M15 14c1.2-1.2 2.9-1.8 5-1.8 4.5 0 7 3.1 7 8.8"/></svg>
+                }
+                @default {
+                  <svg viewBox="0 0 28 24"><circle cx="14" cy="6" r="4"/><circle cx="5" cy="9" r="3"/><circle cx="23" cy="9" r="3"/><path d="M7 22c0-6 2.7-9 7-9s7 3 7 9M1 22c0-4.5 1.5-7 4.5-7 1.1 0 2 .3 2.8.8M19.7 15.8c.8-.5 1.7-.8 2.8-.8 3 0 4.5 2.5 4.5 7"/></svg>
+                }
+              }
+            </span>
+            <div><dt>{{ stat.value }}</dt><dd>{{ stat.label }}</dd></div>
+          </div>
+        }
+      </dl>
+    </div>
+  </div>
+</section>

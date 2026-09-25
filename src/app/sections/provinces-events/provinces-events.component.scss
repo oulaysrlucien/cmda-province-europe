@@ -107,6 +107,10 @@ p {
 }
 
 .events-link { margin-top: 16px; }
+.region-links { display: flex; flex-wrap: wrap; gap: 0 28px; }
+.region-links a { cursor: pointer; }
+.region-links a:hover { text-decoration: underline; }
+.region-links a:focus-visible { outline: 3px solid #1766ae; outline-offset: 4px; }
 
 @media (max-width: 900px) {
   .provinces-events {

@@ -1,25 +1,41 @@
-<header class="site-header" (keydown.escape)="menuOpen = false">
+<header class="site-header" (keydown.escape)="closeMenus(); menuToggle.focus()">
   <div class="header-inner">
-    <a class="brand" href="/" aria-label="CMDA — Accueil">
+    <a class="brand" routerLink="/" aria-label="CMDA — Accueil" (click)="closeMenus()">
       <img class="brand-logo" src="assets/images/logo-cmda.png" alt="" width="260" height="363">
       <span class="brand-name">
         <span class="brand-community">Communauté catholique</span>
         <span class="brand-title">Mère du Divin Amour</span>
-        <span class="brand-short">CMDA</span>
+        <span class="brand-short">CMDA <span class="province-label">- Province Europe</span></span>
       </span>
     </a>
-    <button class="menu-toggle" type="button" aria-controls="header-navigation"
+    <button #menuToggle class="menu-toggle" type="button" aria-controls="header-navigation"
       [attr.aria-expanded]="menuOpen" [attr.aria-label]="menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
-      (click)="menuOpen = !menuOpen">
+      (click)="toggleMenu()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
         @if (menuOpen) { <path d="m6 6 12 12M6 18 18 6" /> }
         @else { <path d="M3 6h18M3 12h18M3 18h18" /> }
       </svg>
     </button>
     <nav id="header-navigation" class="navigation" [class.is-open]="menuOpen" aria-label="Navigation principale">
-      <a class="nav-link is-active" href="/" aria-current="page" (click)="menuOpen = false">Accueil</a>
+      <a class="nav-link" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page" (click)="closeMenus()">Accueil</a>
       @for (label of navigation; track label) {
-        <a class="nav-link" role="link" aria-disabled="true" title="Bientôt disponible">{{ label }}</a>
+        @if (label === 'Régions') {
+          <div class="regions-dropdown" routerLinkActive="region-active"
+            (focusout)="closeRegionsOnFocusLeave($event, regionMenu)"
+            (keydown.escape)="$event.stopPropagation(); regionsOpen = false; regionsToggle.focus()" #regionMenu>
+            <button #regionsToggle class="nav-link regions-toggle" type="button" aria-controls="regions-submenu"
+              [attr.aria-expanded]="regionsOpen" (click)="regionsOpen = !regionsOpen">
+              Régions <span class="chevron" [class.expanded]="regionsOpen" aria-hidden="true">⌄</span>
+            </button>
+            <div id="regions-submenu" class="regions-submenu" [hidden]="!regionsOpen">
+              <a routerLink="/regions/nord" routerLinkActive="selected" ariaCurrentWhenActive="page" (click)="closeMenus()">Région Nord</a>
+              <a routerLink="/regions/sud" routerLinkActive="selected" ariaCurrentWhenActive="page" (click)="closeMenus()">Région Sud</a>
+            </div>
+          </div>
+        } @else {
+          <a class="nav-link" role="link" aria-disabled="true" title="Bientôt disponible">{{ label }}</a>
+        }
       }
       <button class="donate-button" type="button" aria-disabled="true" title="Bientôt disponible">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">

@@ -1,0 +1,21 @@
+:host { display: block; min-width: 0; }
+.fraternities { scroll-margin-top: 20px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 0 0 17px; }
+h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; color: #090b38; font-size: clamp(30px, 3vw, 39px); letter-spacing: -.03em; }
+.heading-mark { display: block; width: 46px; height: 3px; margin-top: 10px; border-radius: 2px; background: #7446c4; }
+.section-heading a { color: #681fc2; text-decoration: none; font-weight: 700; white-space: nowrap; }
+.section-heading a span { margin-left: 12px; font-size: 24px; }
+.fraternity-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.fraternity-card { overflow: hidden; border: 1px solid #e0e2ea; border-radius: 9px; background: #fff; box-shadow: 0 3px 9px rgba(15, 17, 58, .08); }
+.card-placeholder { display: grid; place-items: center; height: 105px; background: linear-gradient(135deg, #f5f0fb, #e4d8f3); color: rgba(83,32,155,.24); font-family: Georgia, 'Times New Roman', serif; font-size: 42px; font-weight: 700; letter-spacing: .08em; }
+.card-content { position: relative; display: grid; grid-template-columns: 34px minmax(0, 1fr) 14px; align-items: center; gap: 8px; min-height: 64px; padding: 10px 12px; }
+.fraternity-marker { display: grid; place-items: center; width: 32px; height: 32px; border: 2px solid #fff; border-radius: 50%; background: #f2ecfa; color: #5c269f; box-shadow: 0 1px 5px #1317462c; font-size: 17px; }
+h3 { margin: 0; overflow-wrap: anywhere; font-family: Georgia, 'Times New Roman', serif; color: #090b38; font-size: 15px; line-height: 1.2; }
+p { margin: 3px 0 0; color: #62657a; font-size: 12px; }
+.card-arrow { color: #0c0e3a; font-size: 25px; }
+@media (max-width: 1050px) { .fraternity-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 580px) {
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .fraternity-list { grid-template-columns: minmax(0, 1fr); }
+  .section-heading a { font-size: 14px; }
+}

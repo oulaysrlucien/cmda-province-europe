@@ -12,9 +12,15 @@
   scroll-margin-top: 16px;
 }
 
-.welcome-content { width: 100%; max-width: 760px; margin-inline: auto; text-align: center; }
+.welcome-content {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
 h2 { margin: 0 0 18px; font-size: clamp(24px, 2vw, 32px); line-height: 1.2; }
 p { margin: 0; color: #242a33; font-size: 16px; line-height: 1.8; text-wrap: pretty; }
+.province-introduction { margin-top: 12px; }
 .history-link {
   display: inline-flex;
   align-items: center;

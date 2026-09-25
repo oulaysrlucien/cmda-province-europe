@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 interface EventItem {
   day: string;
@@ -10,6 +11,7 @@ interface EventItem {
 @Component({
   selector: 'app-provinces-events',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './provinces-events.component.html',
   styleUrl: './provinces-events.component.scss'
 })

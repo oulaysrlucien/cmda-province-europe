@@ -1,0 +1,35 @@
+:host { display: block; }
+.region-hero { position: relative; min-height: 355px; background-position: center; background-size: cover; color: #090b38; }
+.hero-inner { width: min(1340px, 90%); min-height: 355px; margin-inline: auto; display: flex; align-items: center; }
+.hero-copy { width: min(490px, 46%); padding-block: 34px 28px; }
+.eyebrow { margin: 0 0 7px; font-size: 11px; font-weight: 700; letter-spacing: .42em; text-transform: uppercase; }
+h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(48px, 5vw, 72px); line-height: .98; letter-spacing: -.04em; }
+h1 span { color: #53209b; }
+.introduction { max-width: 470px; margin: 13px 0 22px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(17px, 1.7vw, 22px); line-height: 1.35; }
+.region-stats { display: flex; margin: 0; }
+.stat { display: flex; align-items: center; gap: 12px; min-width: 124px; padding: 0 24px; border-right: 1px solid #cfd0df; }
+.stat:first-child { padding-left: 0; }
+.stat:last-child { border: 0; }
+.stat-icon { width: 39px; color: #6730ad; flex: 0 0 auto; }
+.stat-icon svg { display: block; width: 100%; fill: currentColor; stroke: currentColor; stroke-width: 1.5; }
+.stat-icon svg circle { fill: currentColor; }
+.stat div { display: grid; }
+dt { font-family: Georgia, 'Times New Roman', serif; color: #54209b; font-size: 25px; font-weight: 700; line-height: 1; }
+dd { margin: 4px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: 14px; }
+@media (max-width: 900px) {
+  .region-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.98) 0 48%, rgba(255,255,255,.72) 70%, rgba(255,255,255,.15)); }
+  .hero-inner { position: relative; }
+  .hero-copy { width: min(570px, 75%); }
+}
+@media (max-width: 640px) {
+  .region-hero { min-height: 470px; background-position: 55% center; }
+  .region-hero::before { background: linear-gradient(90deg, rgba(255,255,255,.98), rgba(255,255,255,.86)); }
+  .hero-inner { min-height: 470px; width: min(100% - 32px, 540px); }
+  .hero-copy { width: 100%; }
+  h1 { font-size: 50px; }
+  .region-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat { min-width: 0; padding: 0 10px; gap: 7px; }
+  .stat-icon { width: 28px; }
+  dt { font-size: 21px; }
+  dd { font-size: 12px; }
+}

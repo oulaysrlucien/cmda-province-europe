@@ -1,0 +1,10 @@
+<section id="apercu" class="overview" aria-label="Aperçu de la Région Nord">
+  <article class="about-card">
+    <h2>À propos<br>de la Région Nord</h2>
+    <span class="heading-mark" aria-hidden="true"></span>
+    <p>{{ region.description }}</p>
+    <a [routerLink]="[]" fragment="fraternites">Découvrir nos fraternités <span aria-hidden="true">→</span></a>
+  </article>
+
+  <app-fraternity-grid [fraternities]="region.fraternities" />
+</section>
