@@ -1,6 +1,6 @@
-<section id="apercu" class="overview" aria-label="Aperçu de la Région Nord">
+<section id="apercu" class="overview" [attr.aria-label]="'Aperçu de la ' + region.name">
   <article class="about-card">
-    <h2>À propos<br>de la Région Nord</h2>
+    <h2>À propos<br>de la {{ region.name }}</h2>
     <span class="heading-mark" aria-hidden="true"></span>
     <p>{{ region.description }}</p>
     <a [routerLink]="[]" fragment="fraternites">Découvrir nos fraternités <span aria-hidden="true">→</span></a>

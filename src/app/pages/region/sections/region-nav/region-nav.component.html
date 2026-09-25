@@ -1,4 +1,4 @@
-<nav class="region-navigation" aria-label="Navigation de la Région Nord">
+<nav class="region-navigation" [attr.aria-label]="'Navigation de la ' + regionName">
   <div class="navigation-inner">
     <a class="active" [routerLink]="[]" fragment="apercu"><span aria-hidden="true">⌂</span>Aperçu</a>
     <a [routerLink]="[]" fragment="fraternites"><span aria-hidden="true">♟</span>Fraternités</a>

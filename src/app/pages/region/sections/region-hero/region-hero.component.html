@@ -2,10 +2,10 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="eyebrow">{{ region.eyebrow }}</p>
-      <h1 id="region-title">Région <span>Nord</span></h1>
+      <h1 id="region-title">Région <span>{{ region.shortName }}</span></h1>
       <p class="introduction">{{ region.introduction }}</p>
 
-      <dl class="region-stats" aria-label="La Région Nord en chiffres">
+      <dl class="region-stats" [attr.aria-label]="region.name + ' en chiffres'">
         @for (stat of region.stats; track stat.label) {
           <div class="stat">
             <span class="stat-icon" aria-hidden="true">

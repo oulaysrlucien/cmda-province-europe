@@ -15,7 +15,8 @@ describe('Navigation des régions', () => {
     expect(harness.routeNativeElement?.querySelectorAll('.fraternity-card').length).toBe(8);
     await harness.navigateByUrl('/regions/sud');
     expect(harness.routeNativeElement?.querySelector('h1')?.textContent).toBe('Région Sud');
-    expect(harness.routeNativeElement?.querySelector('#fraternites')?.textContent).toContain('Région Sud');
+    expect(harness.routeNativeElement?.querySelector('#fraternites')?.textContent).toContain('Amour et Vérité');
+    expect(harness.routeNativeElement?.querySelectorAll('.fraternity-card').length).toBe(7);
     await harness.navigateByUrl('/');
     expect(harness.routeNativeElement?.querySelector('app-hero')).toBeTruthy();
     expect(harness.routeNativeElement?.querySelector('a[href="/regions/nord"]')).toBeTruthy();

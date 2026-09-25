@@ -13,6 +13,7 @@ export interface Fraternity {
 
 export interface RegionContent {
   name: string;
+  shortName: string;
   eyebrow: string;
   introduction: string;
   description: string;

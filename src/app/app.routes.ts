@@ -12,7 +12,8 @@ export const routes: Routes = [
   },
   {
     path: 'regions/sud', title: 'Région Sud — CMDA Province Europe',
-    loadComponent: () => import('./pages/region-south/region-south.component').then(m => m.RegionSouthComponent)
+    data: { region: 'sud' },
+    loadComponent: () => import('./pages/region/region.component').then(m => m.RegionComponent)
   },
   { path: '**', redirectTo: '' }
 ];

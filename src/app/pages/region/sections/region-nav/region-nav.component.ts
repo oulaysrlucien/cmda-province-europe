@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,4 +8,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './region-nav.component.html',
   styleUrl: './region-nav.component.scss'
 })
-export class RegionNavComponent {}
+export class RegionNavComponent {
+  @Input({ required: true }) regionName = '';
+}

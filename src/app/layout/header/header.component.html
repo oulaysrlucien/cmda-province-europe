@@ -26,7 +26,10 @@
             (keydown.escape)="$event.stopPropagation(); regionsOpen = false; regionsToggle.focus()" #regionMenu>
             <button #regionsToggle class="nav-link regions-toggle" type="button" aria-controls="regions-submenu"
               [attr.aria-expanded]="regionsOpen" (click)="regionsOpen = !regionsOpen">
-              Régions <span class="chevron" [class.expanded]="regionsOpen" aria-hidden="true">⌄</span>
+              Régions
+              <svg class="chevron" [class.expanded]="regionsOpen" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="m3.5 6 4.5 4 4.5-4" />
+              </svg>
             </button>
             <div id="regions-submenu" class="regions-submenu" [hidden]="!regionsOpen">
               <a routerLink="/regions/nord" routerLinkActive="selected" ariaCurrentWhenActive="page" (click)="closeMenus()">Région Nord</a>
